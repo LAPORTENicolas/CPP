@@ -5,14 +5,12 @@ SRC_DIR		:= ./srcs/
 OBJ_DIR		:= $(BUILD_DIR)/objs/
 DEP_DIR		:= $(BUILD_DIR)/deps/
 
-SRCS		:= $(shell find . -name '*.c')
-OBJS		:= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%, $(SRCS:.c=.o))
-DEPS		:= $(patsubst $(SRC_DIR)%,$(DEP_DIR)%, $(SRCS:.c=.d))
+SRCS		:= megaphone.cpp
+OBJS		:= megaphone.o
 
-CC			:= c++ std=c++98
+CC			:= c++ -std=c++98
 CFLAGS		:= -Wall -Wextra -Werror -MMD
-#LDLIBS	=
-TARGET		:= phonebook
+TARGET		:= megaphone
 
 all: ${TARGET}
 
@@ -40,7 +38,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	fi
 
 clean:
-	@rm -rf $(BUILD_DIR)
+	@rm -rf $(OBJS)
 	@rm -rf err_makefile.log
 
 fclean: clean
