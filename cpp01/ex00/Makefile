@@ -5,13 +5,12 @@ SRC_DIR		:= ./srcs/
 OBJ_DIR		:= $(BUILD_DIR)/objs/
 DEP_DIR		:= $(BUILD_DIR)/deps/
 
-SRCS		:= Contact.cpp Phonebook.cpp
-OBJS		:= Contact.o Phonebook.o
+SRCS		:= main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+OBJS		:= main.o newZombie.o randomChump.o Zombie.o
 
 CC			:= c++ -std=c++98
 CFLAGS		:= -Wall -Wextra -Werror -MMD
-#LDLIBS	=
-TARGET		:= Phonebook
+TARGET		:= z
 
 all: ${TARGET}
 
@@ -46,3 +45,5 @@ fclean: clean
 	@rm -rf $(TARGET)
 
 re: fclean all
+
+-include $(DEPS)

@@ -5,13 +5,12 @@ SRC_DIR		:= ./srcs/
 OBJ_DIR		:= $(BUILD_DIR)/objs/
 DEP_DIR		:= $(BUILD_DIR)/deps/
 
-SRCS		:= Contact.cpp Phonebook.cpp
-OBJS		:= Contact.o Phonebook.o
+SRCS		:= main.cpp Harl.cpp
+OBJS		:= main.o Harl.o
 
-CC			:= c++ -std=c++98
+CC			:= c++ -std=c++98 -g
 CFLAGS		:= -Wall -Wextra -Werror -MMD
-#LDLIBS	=
-TARGET		:= Phonebook
+TARGET		:= harlFilter
 
 all: ${TARGET}
 
@@ -46,3 +45,5 @@ fclean: clean
 	@rm -rf $(TARGET)
 
 re: fclean all
+
+-include $(DEPS)
