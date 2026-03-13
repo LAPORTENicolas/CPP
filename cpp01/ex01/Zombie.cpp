@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 10:21:30 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/01/31 10:25:30 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/09 19:48:39 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ Zombie::Zombie(void)
 {
 }
 
-Zombie::Zombie(std::string name) : name{ name }
+Zombie::Zombie(std::string name)
 {
+	this->name = name;
 }
 
 Zombie::~Zombie(void)

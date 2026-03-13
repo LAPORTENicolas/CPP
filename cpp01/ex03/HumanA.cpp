@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:40:21 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/02/06 11:57:52 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/09 23:02:51 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 HumanA::HumanA(Weapon &weapon) : weapon(weapon)
 {}
 
-HumanA::HumanA(std::string name, Weapon &weapon) : name{ name }, weapon{ weapon }
+HumanA::HumanA(std::string name, Weapon &weapon) : weapon(weapon), name(name)
 {}
 
 HumanA::~HumanA()

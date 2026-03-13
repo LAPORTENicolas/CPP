@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 14:32:14 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/02/11 13:00:01 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/13 11:22:02 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include <string>
 #include <errno.h>
 
-
-int	manage_ifstream(std::string in_path, std::ifstream *in)
+int	manage_ifstream(const char *in_path, std::ifstream *in)
 {
 	std::string		err;
 
@@ -25,62 +24,31 @@ int	manage_ifstream(std::string in_path, std::ifstream *in)
 	in->open(in_path);
 	if (in->is_open())
 		return 0;
-	std::cout << "(Infile errno " << errno << ") Error can't use file " << in_path <<  " " << strerror(errno) << std::endl;
+	std::cout << "(Infile errno " << errno << ") Error can't use file " << in_path <<  std::endl;
 	return 1;
 }
 
 int	manage_ofstream(std::string out_path, std::ofstream *out)
 {
 	std::string		err;
+	std::string		new_file = out_path.append(".replace");
 
-	out->open(out_path.append(".replace"));
+	out->open(new_file.c_str());
 	if (out->is_open())
 		return 1;
-	std::cout << "(Outfile) Error can't use file " << out_path <<  ".replace " << strerror(errno) << std::endl;
+	std::cout << "(Outfile) Error can't use file " << out_path << std::endl;
 	return 0;
-}
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	if (n <= 0)
-		return (0);
-	while ((unsigned char)s1[i] \
-		&& (unsigned char)s1[i] == (unsigned char)s2[i] && i < n - 1)
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-}
-
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i++]);
-	return i - 1 < 0 ? 0 : i - 1;
 }
 
 void	find_occurence(std::string *buf, std::string s1, std::string s2)
 {
-	const char	*to_find;
-	int			i;
-	int			j;
+	int			code = -1;
 
-	to_find = s1.c_str();
-	i = 0;
-	while (i <= ft_strlen(buf->c_str()) - ft_strlen(to_find))
+	while (((code = buf->find(s1, code + 1)) >= 0))
 	{
-		if (ft_strncmp(buf->c_str() + i, to_find, ft_strlen(to_find)) == 0)
-		{
-			j = -1;
-			while (++j < ft_strlen(to_find))
-				(*buf)[i + j] = s2[j % ft_strlen(s2.c_str())];
-			i += j;
-		}
-		else
-			i++;
+		std::cout << "MDR" << std::endl;
+		buf->erase(code, s1.length());
+		buf->insert(code, s2);
 	}
 }
 

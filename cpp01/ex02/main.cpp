@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:22:51 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/02/05 16:28:38 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/09 21:46:56 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(void)
 	std::string *stringPTR = &string;
 	std::string &stringREF = string;
 
-	std::cout << "string:		" << &string << "\nstringPTR:	" << stringPTR << "\nstringREF:	" << &stringREF << std::endl;
+	std::cout << "Adress\nstring:		" << &string << "\nstringPTR:	" << stringPTR << "\nstringREF:	" << &stringREF << std::endl << std::endl;
+	std::cout << "Value:\nstring:		" << string << "\nstringPTR:	" << *stringPTR << "\nstringREF:	" << stringREF << std::endl;
 	return 0;
 }

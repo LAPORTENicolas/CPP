@@ -16,7 +16,8 @@ class Harl
 	public:
 		Harl();
 		~Harl();
-		void	(Harl::*complain(std::string))();
+		void			(Harl::*complain(std::string))();
+		unsigned long	hash_pls(std::string);
 };
 
 #endif // _HARL_H__

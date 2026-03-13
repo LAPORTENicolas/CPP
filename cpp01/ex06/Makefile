@@ -1,49 +1,26 @@
 SHELL		:= bash
 
-BUILD_DIR	:= ./build
-SRC_DIR		:= ./srcs/
-OBJ_DIR		:= $(BUILD_DIR)/objs/
-DEP_DIR		:= $(BUILD_DIR)/deps/
-
 SRCS		:= main.cpp Harl.cpp
 OBJS		:= main.o Harl.o
 
-CC			:= c++ -std=c++98 -g
-CFLAGS		:= -Wall -Wextra -Werror -MMD
-TARGET		:= harlFilter
+CXX			:= c++
+CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror
+NAME		:= harlFilter
 
-all: ${TARGET}
+all: ${NAME}
 
-debug:
-	@echo $(SRCS)
-	@echo $(OBJS)
-	@echo $(DEPS)
+${NAME}: ${OBJS}
+	${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
 
-${TARGET}: ${OBJS}
-	@if ${CC} ${OBJS} -o ${TARGET} ${LDLIBS} >/dev/null 2>&1; then \
-		printf "\n\e[38;2;0;229;232m Compilation \e[0m $(TARGET) \e[38;2;84;213;52m	\e[75G OK\n\e[0m"; \
-	else \
-		printf "\n\e[38;2;0;229;232m Compilation \e[0m $(TARGET) \e[38;2;213;84;52m	\e[75G KO\n\e[0m"; \
-		${CC} ${OBJS} -o ${TARGET} ${LDLIBS}>/dev/null; \
-	fi
-
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	@mkdir -p $(dir $@) >/dev/null
-	@mkdir -p $(patsubst $(OBJ_DIR)%,$(DEP_DIR)%, ./$(dir $@)) >/dev/null
-	@if ${CC} ${CFLAGS} -MF $(DEP_DIR)$*.d -c $< -o $@ >/dev/null 2>err_makefile.log; then \
-		printf "\e[38;2;0;229;232m Compilation \e[0m $*.c \e[38;2;84;213;52m	\e[75G OK\n\e[0m"; \
-	else \
-		printf "\e[38;2;0;229;232m Compilation \e[0m $*.c \e[38;2;213;84;52m	\e[75G KO\n\e[0m"; \
-		${CC} ${CFLAGS} -MF $(DEP_DIR)$*.d -c $< -o $@ >/dev/null; \
-	fi
+%.o: %.cpp
+	${CXX} ${CXXFLAGS} -c $< -o $@ 
 
 clean:
 	@rm -rf $(OBJS)
-	@rm -rf err_makefile.log
 
 fclean: clean
-	@rm -rf $(TARGET)
+	@rm -rf $(NAME)
+
+.PHONY: all clean fclean
 
 re: fclean all
-
--include $(DEPS)
