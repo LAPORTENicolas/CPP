@@ -6,19 +6,13 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:42:38 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/09 22:01:21 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/13 11:19:29 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "HumanB.hpp"
 #include "Weapon.hpp"
-
-/*
-HumanB::HumanB()
-{
-}
-*/
 
 HumanB::HumanB(std::string name)
 {

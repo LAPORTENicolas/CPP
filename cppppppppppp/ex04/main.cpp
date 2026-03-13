@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 14:32:14 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/13 07:44:58 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/13 11:22:02 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <fstream>
 #include <string>
 #include <errno.h>
-
 
 int	manage_ifstream(const char *in_path, std::ifstream *in)
 {

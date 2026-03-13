@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 10:20:21 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/13 04:09:37 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/13 11:13:49 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ void	make_a_test(int N)
 		N = 0;
 	z = zombieHorde(N, "Z");
 	for (int i=0;i<N;i++)
-	{
 		z[i].annonce();
-	}
 	delete []z;
 	std::cout << "\n";
 }
