@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 14:32:14 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/13 11:22:02 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/14 08:00:56 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	find_occurence(std::string *buf, std::string s1, std::string s2)
 
 	while (((code = buf->find(s1, code + 1)) >= 0))
 	{
-		std::cout << "MDR" << std::endl;
 		buf->erase(code, s1.length());
 		buf->insert(code, s2);
 	}
