@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 21:02:08 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/01/28 21:02:08 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/09 19:20:02 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 	i = 0;
 	while (++i < ac)
 	{
-		for (int j = 0; j < ((std::string)av[i]).length(); j++)
+		for (unsigned long j = 0; j < ((std::string)av[i]).length(); j++)
 			if (av[i][j] >= 'a' && av[i][j] <= 'z')
 				std::cout << (char)(av[i][j] - 32);
 			else

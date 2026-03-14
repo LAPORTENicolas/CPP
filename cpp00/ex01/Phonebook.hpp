@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:29:53 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/01/29 18:20:34 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/02/21 17:14:42 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class	Phonebook
 	bool			print_all;
 	int				isprint(std::string);
 	int				isnum(std::string);
+	int				valide_string(std::string);
 	std::string		getid(std::string);
 	std::string		getinput(std::string);
 

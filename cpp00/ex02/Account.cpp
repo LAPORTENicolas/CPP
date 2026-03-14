@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 00:39:07 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/01/31 02:02:09 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/09 19:39:52 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,28 @@ void	Account::_displayTimestamp( void )
 {
     char mbstr[100];
 
-	std::time_t t = std::time(nullptr);
+	std::time_t t = std::time(0);
     if (std::strftime(mbstr, sizeof(mbstr), "[%Y%m%d_%H%M%S] ", std::localtime(&t)))
    		std::cout << mbstr;
         
 }
 
-Account::Account(void) : _accountIndex{ 0 }, _amount{ 0 }, _nbDeposits{ 0 }, _nbWithdrawals { 0 }
+Account::Account(void)
 {
+	this->_accountIndex = 0;
+	this->_amount = 0;
+	this->_nbDeposits = 0;
+	this->_nbWithdrawals = 0;
 	this->_accountIndex = _nbAccounts;
 	_nbAccounts++;
 }
 
-Account::Account(int inital_deposit) : _accountIndex{ 0 }, _amount{ 0 }, _nbDeposits{ 0 }, _nbWithdrawals { 0 }
+Account::Account(int inital_deposit)
 {
+	this->_accountIndex = 0;
+	this->_amount = 0;
+	this->_nbDeposits = 0;
+	this->_nbWithdrawals = 0;
 	_displayTimestamp();
 	std::cout << "index:" << _nbAccounts << ";amount:" << inital_deposit << ";created" << std::endl;
 	this->_accountIndex = _nbAccounts;
