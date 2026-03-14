@@ -1,14 +1,9 @@
-SHELL		:= bash
-
-BUILD_DIR	:= ./build
-SRC_DIR		:= ./srcs/
-
 SRCS		:= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS		:= main.o HumanA.o HumanB.o Weapon.o
 
 CXX			:= c++
 CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror
-NAME		:= violence
+NAME		:= ex03
 
 all: ${NAME}
 

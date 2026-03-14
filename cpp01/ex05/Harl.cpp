@@ -28,26 +28,13 @@ void	Harl::error()
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void	test()
-{
-}
-
 void	(Harl::*Harl::complain(std::string level))()
 {
 	std::string	arr_level[4] = {"ERROR", "WARNING", "INFO", "DEBUG"};
-	void (Harl::*arr[4])() = {&Harl::error, &Harl::warning, &Harl::info, &Harl::debug};
+	void		(Harl::*arr[4])() = {&Harl::error, &Harl::warning, &Harl::info, &Harl::debug};
+
 	for (int i=0; i<4; i++)
 		if (level == arr_level[i])
 			return arr[i];
-	/*
-	if (level == "ERROR")
-		return &Harl::error;
-	else if (level == "WARNING")
-		return &Harl::warning;
-	else if (level == "INFO")
-		return &Harl::info;
-	else if (level == "DEBUG")
-		return &Harl::debug;
-	*/
 	return NULL;
 }

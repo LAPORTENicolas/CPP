@@ -1,8 +1,3 @@
-SHELL		:= bash
-
-BUILD_DIR	:= ./build
-SRC_DIR		:= ./srcs/
-
 SRCS		:= main.cpp
 OBJS		:= main.o
 

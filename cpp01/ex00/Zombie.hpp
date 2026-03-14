@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 09:32:10 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/13 10:01:42 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/14 09:54:23 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 class Zombie
 {
-	std::string	name;
+	std::string	_name;
 
 	public:
 		Zombie(void);

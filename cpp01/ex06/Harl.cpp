@@ -27,7 +27,7 @@ void	Harl::warning()
 
 void	Harl::error()
 {
-	std::cout << "[ ERROR ]\n" << "This is unacceptable! I want to speak to the manager now.\n" << std::endl;
+	std::cout << "[ ERROR ]\n" << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
 void	Harl::ok()
@@ -48,7 +48,12 @@ unsigned long	Harl::hash_pls(std::string level)
 
 void	(Harl::*Harl::complain(std::string level))()
 {
-	unsigned long	hash = hash_pls(level);
+	unsigned long	hash;
+
+	if (level.length() < 10)
+ 		hash = hash_pls(level);
+	else
+		hash = 0;
 	switch (hash)
 	{
 		case 6692:

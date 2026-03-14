@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 10:20:21 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/13 11:13:49 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/14 10:27:13 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,28 @@ int	main(void)
 }
 */
 
-void	make_a_test(int N)
+void	make_a_test(int N, std::string name)
 {
 	Zombie	*z;
 
-	std::cout << "Make a test for " << N << " z" << std::endl;
 	if (N <= 0)
 		N = 0;
-	z = zombieHorde(N, "Z");
+	std::cout << "Make a test for " << N << " zombie(s)" << std::endl;
+	z = zombieHorde(N, name);
 	for (int i=0;i<N;i++)
 		z[i].annonce();
-	delete []z;
+	for (int i=0;i<N;i++)
+		z[i].~Zombie();
+	operator delete (z);
 	std::cout << "\n";
 }
 
 int	main(void)
 {
-	make_a_test(10);
-	make_a_test(0);
-	make_a_test(1);
-	make_a_test(2);
-	make_a_test(3);
-	make_a_test(5);
+	make_a_test(10, "A");
+	make_a_test(1, "B");
+	make_a_test(2, "C");
+	make_a_test(3, "D");
+	make_a_test(5, "E");
 	return 0;
 }

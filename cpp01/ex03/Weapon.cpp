@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:33:43 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/09 21:56:23 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/14 10:32:27 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 #include <iostream>
 #include "Weapon.hpp"
 
-Weapon::Weapon()
-{
-	this->type = "";
-}
+Weapon::Weapon() : _type ( "" )
+{}
 
-Weapon::Weapon(std::string type)
-{
-	this->type = type;
-}
+Weapon::Weapon(std::string type) : _type( type )
+{}
 
 Weapon::~Weapon()
 {}
@@ -30,10 +26,10 @@ Weapon::~Weapon()
 void	Weapon::setType(std::string type)
 {
 	std::cout << "new type " << type << std::endl;
-	this->type = type;
+	this->_type = type;
 }
 
 const std::string	Weapon::getType() const
 {
-	return this->type;
+	return this->_type;
 }

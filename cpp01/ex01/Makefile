@@ -1,11 +1,9 @@
-SHELL		:= bash
-
 SRCS		:= main.cpp Zombie.cpp zombieHorde.cpp
 OBJS		:= main.o Zombie.o zombieHorde.o
 
 CXX			:= c++
 CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror
-NAME		:= z
+NAME		:= ex01
 
 all: ${NAME}
 

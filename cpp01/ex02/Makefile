@@ -1,14 +1,9 @@
-SHELL		:= bash
-
-BUILD_DIR	:= ./build
-SRC_DIR		:= ./srcs/
-
 SRCS		:= main.cpp
 OBJS		:= main.o
 
 CXX			:= c++
 CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror
-NAME		:= z
+NAME		:= ex02
 
 all: ${NAME}
 

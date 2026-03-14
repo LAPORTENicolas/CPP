@@ -1,11 +1,9 @@
-SHELL		:= bash
-
 SRCS		:= main.cpp Harl.cpp
 OBJS		:= main.o Harl.o
 
 CXX			:= c++
 CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror
-NAME		:= harl
+NAME		:= ex05
 
 all: ${NAME}
 
