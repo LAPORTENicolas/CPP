@@ -6,9 +6,13 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 09:32:10 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/14 09:57:57 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/14 12:06:24 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
+#ifndef _ZOMBIE_H__
+# define _ZOMBIE_H__
 
 #include <string>
 
@@ -30,3 +34,5 @@ Zombie *newZombie(std::string name);
 
 // newZombie.cpp
 Zombie	*zombieHorde(int n, std::string name);
+
+#endif // _ZOMBIE_H__
