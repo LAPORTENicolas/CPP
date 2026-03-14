@@ -3,7 +3,7 @@ OBJS		:= main.o
 
 CXX			:= c++
 CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror -g
-NAME		:= not_a_looser
+NAME		:= ex04
 
 all: ${NAME}
 
