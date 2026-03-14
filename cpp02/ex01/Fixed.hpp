@@ -6,17 +6,14 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 13:34:45 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/13 12:16:31 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/14 11:30:31 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <fstream>
 #include <ostream>
 #ifndef  _FIXED_H__
 # define _FIXED_H__
-
-#include <string>
 
 class Fixed
 {

@@ -6,17 +6,14 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 13:34:45 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/13 12:32:40 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/14 11:38:10 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <fstream>
 #include <ostream>
 #ifndef  _FIXED_H__
 # define _FIXED_H__
-
-#include <string>
 
 class Fixed
 {
@@ -49,7 +46,6 @@ class Fixed
 		static Fixed		&min(const Fixed&, const Fixed&);
 		static Fixed		&max(Fixed&, Fixed&);
 		static Fixed		&max(const Fixed&, const Fixed&);
-		//friend float		++operator(const Fixed&);
 		int					toInt() const;
 		int					getRawBits(void) const;
 		void				setRawBits(int const);

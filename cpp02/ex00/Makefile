@@ -2,7 +2,7 @@ SRCS		:= main.cpp Fixed.cpp
 OBJS		:= main.o Fixed.o
 CXX			:= c++
 CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror
-NAME		:= fixed
+NAME		:= ex00
 
 all: ${NAME}
 
