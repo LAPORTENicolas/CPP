@@ -3,7 +3,7 @@
 #ifndef _HARL_H__
 # define _HARL_H__
 
-#include <string>
+# include <string>
 
 class Harl
 {

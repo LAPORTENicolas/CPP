@@ -6,11 +6,10 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 14:32:14 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/14 08:00:56 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/15 14:03:13 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cstring>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -23,9 +22,9 @@ int	manage_ifstream(const char *in_path, std::ifstream *in)
 	errno = 0;
 	in->open(in_path);
 	if (in->is_open())
-		return 0;
-	std::cout << "(Infile errno " << errno << ") Error can't use file " << in_path <<  std::endl;
-	return 1;
+		return 1;
+	std::cout << "(Infile) Error can't use file " << in_path <<  std::endl;
+	return 0;
 }
 
 int	manage_ofstream(std::string out_path, std::ofstream *out)
@@ -59,7 +58,7 @@ int	main(int ac, char **av)
 
 	if (ac != 4)
 		return (std::cout << "Need 3 args Filename, s1 and s2" << std::endl, 0);
-	if (manage_ifstream(av[1], &in) & 1)
+	if (!manage_ifstream(av[1], &in))
 		return (0);
 	if (!manage_ofstream(av[1], &out))
 		return (in.close(), 0);

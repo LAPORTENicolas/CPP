@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 17:00:04 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/13 11:20:49 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/15 13:55:01 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "HumanB.hpp"
 #include <iostream>
 
-/*
 int main()
 {
 	{
@@ -58,8 +57,8 @@ int main()
 	}
 	return 0;
 }
-*/
 
+/*
 int	main()
 {
 	{
@@ -78,3 +77,4 @@ int	main()
 		jim.attack();
 	}
 }
+*/
