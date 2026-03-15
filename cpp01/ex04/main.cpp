@@ -6,47 +6,59 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 14:32:14 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/15 14:03:13 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/15 21:27:18 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <errno.h>
 
-int	manage_ifstream(const char *in_path, std::ifstream *in)
+namespace 
 {
-	std::string		err;
-
-	errno = 0;
-	in->open(in_path);
-	if (in->is_open())
-		return 1;
-	std::cout << "(Infile) Error can't use file " << in_path <<  std::endl;
-	return 0;
-}
-
-int	manage_ofstream(std::string out_path, std::ofstream *out)
-{
-	std::string		err;
-	std::string		new_file = out_path.append(".replace");
-
-	out->open(new_file.c_str());
-	if (out->is_open())
-		return 1;
-	std::cout << "(Outfile) Error can't use file " << out_path << std::endl;
-	return 0;
-}
-
-void	find_occurence(std::string *buf, std::string s1, std::string s2)
-{
-	int			code = -1;
-
-	while (((code = buf->find(s1, code + 1)) >= 0))
+	void	manage_ifstream(const char *in_path, std::ifstream &in)
 	{
-		buf->erase(code, s1.length());
-		buf->insert(code, s2);
+		in.exceptions(std::ios_base::badbit | std::ios_base::failbit);
+		try
+		{
+			in.open(in_path);
+		}
+		catch (std::ios_base::failure &e)
+		{
+			throw e;
+		}
+		in.exceptions(std::ios_base::goodbit);
+	}
+
+	void	manage_ofstream(const char *out_path, std::ofstream &out)
+	{
+		std::string	path = static_cast<std::string>(out_path);
+
+		path.append(".replace");
+		out.exceptions(std::ios_base::badbit | std::ios_base::failbit);
+		try
+		{
+			out.open(path.c_str());
+		}
+		catch (const std::ios_base::failure &e)
+		{
+			throw e;
+		}
+		out.exceptions(std::ios_base::goodbit);
+	}
+
+	void	find_occurence(std::string &buf, const std::string &str1, const std::string &str2)
+	{
+		size_t	code = buf.find(str1);
+
+		if (buf.length() <= 0 || str1.length() <= 0)
+			return ;
+		while (code != std::string::npos)
+		{
+			buf.erase(code, str1.length());
+			buf.insert(code, str2);
+			code = buf.find(str1, code + str2.length());
+		}
 	}
 }
 
@@ -55,19 +67,27 @@ int	main(int ac, char **av)
 	std::ifstream	in;
 	std::ofstream	out;
 	std::string		buf;
+	std::string		str1 = static_cast<std::string>(av[2]);
+	std::string		str2 = static_cast<std::string>(av[3]);
 
 	if (ac != 4)
-		return (std::cout << "Need 3 args Filename, s1 and s2" << std::endl, 0);
-	if (!manage_ifstream(av[1], &in))
-		return (0);
-	if (!manage_ofstream(av[1], &out))
-		return (in.close(), 0);
+		return (std::cout << "Need 3 args Filename, s1 and s2\n", 0);
+	try
+	{
+		manage_ifstream(av[1], in);
+		manage_ofstream(av[1], out);
+	}
+	catch (std::ios_base::failure &e)
+	{
+		std::cout << "Error: " << e.what() << "\n";
+		return 0;
+	}
 	while (std::getline(in, buf))
 	{
-		find_occurence(&buf, av[2], av[3]);
-		out << buf << '\n';
+		find_occurence(buf, str1, str2);
+		out << buf;
+		if (!in.eof())
+			out << "\n";
 	}
-	in.close();
-	out.close();
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:40:21 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/15 13:53:29 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/15 19:10:49 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 #include "Weapon.hpp"
 #include <iostream>
 
-HumanA::HumanA(Weapon &weapon) : weapon( weapon )
-{}
-
-HumanA::HumanA(std::string name, Weapon &weapon) : name( name ), weapon( weapon )
+HumanA::HumanA(const std::string &name, Weapon &weapon) : _name( name ), _weapon( weapon )
 {}
 
 HumanA::~HumanA()
@@ -25,5 +22,5 @@ HumanA::~HumanA()
 
 void	HumanA::attack()
 {
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << "\n";
 }

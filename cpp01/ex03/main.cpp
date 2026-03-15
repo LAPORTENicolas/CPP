@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 17:00:04 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/15 13:55:01 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/15 19:10:43 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ int main()
 		jim.attack();
 	}
 	{
-		std::cout << "\n\nHuman B" << std::endl;
+		std::cout << "\n\nHuman B\n";
 		Weapon club = Weapon("crude spiked club");
 		Weapon gun = Weapon("big gun");
 		HumanB bob("Bob");
 		bob.attack();
-		std::cout << "Human B switch weapon" << std::endl;
+		std::cout << "Human B switch weapon\n";
 		bob.setWeapon(club);
 		bob.attack();
-		std::cout << "Human B switch weapon" << std::endl;
+		std::cout << "Human B switch weapon\n";
 		bob.setWeapon(gun);
 		bob.attack();
 		//bob.setWeapon(gun);

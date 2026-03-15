@@ -2,7 +2,7 @@ SRCS		:= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS		:= main.o HumanA.o HumanB.o Weapon.o
 
 CXX			:= c++
-CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror -g
 NAME		:= ex03
 
 all: ${NAME}
@@ -21,4 +21,4 @@ fclean: clean
 
 .PHONY: all clean fclean
 
-re: fclean all
+re: fclean all # FIXME: même chose que dans l'exo 0

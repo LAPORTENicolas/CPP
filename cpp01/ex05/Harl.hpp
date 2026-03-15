@@ -1,7 +1,16 @@
-#pragma once
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/15 21:33:36 by nlaporte          #+#    #+#             */
+/*   Updated: 2026/03/15 22:27:12 by nlaporte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#ifndef _HARL_H__
-# define _HARL_H__
+#pragma once
 
 # include <string>
 
@@ -15,7 +24,5 @@ class Harl
 	public:
 		Harl();
 		~Harl();
-		void	(Harl::*complain(std::string))();
+		void	complain(std::string level);
 };
-
-#endif // _HARL_H__

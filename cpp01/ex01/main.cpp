@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 10:20:21 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/14 10:27:13 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/15 23:40:19 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,32 @@ int	main(void)
 }
 */
 
-void	make_a_test(int N, std::string name)
+void	make_a_test(int N, const std::string &name)
 {
 	Zombie	*z;
 
-	if (N <= 0)
-		N = 0;
-	std::cout << "Make a test for " << N << " zombie(s)" << std::endl;
+	std::cout << "Make a test for " << N << " zombie(s)\n";
 	z = zombieHorde(N, name);
 	for (int i=0;i<N;i++)
 		z[i].annonce();
-	for (int i=0;i<N;i++)
-		z[i].~Zombie();
-	operator delete (z);
+	delete []z;
 	std::cout << "\n";
 }
 
 int	main(void)
 {
-	make_a_test(10, "A");
-	make_a_test(1, "B");
-	make_a_test(2, "C");
-	make_a_test(3, "D");
-	make_a_test(5, "E");
+
+	try 
+	{
+		make_a_test(1, "Zombie A");
+		make_a_test(1, "Zombies B");
+		make_a_test(2, "Zombies C");
+		make_a_test(3, "Zombies D");
+		make_a_test(5, "Zombies E");
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << "Error: " << e.what() << "\n";
+	}
 	return 0;
 }

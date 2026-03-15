@@ -6,28 +6,24 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:39:42 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/14 12:06:45 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/15 19:10:17 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef _HUMANB_H__
-# define _HUMANB_H__
 
 # include "Weapon.hpp"
 
 class HumanB
 {
-	std::string	name;
-	Weapon		*weapon;
+	std::string	_name;
+	Weapon		*_weapon;
 
 	public:
 		HumanB();
-		HumanB(std::string name);
-		HumanB(std::string name, Weapon *weapon);
+		HumanB(const std::string &name);
+		HumanB(const std::string &name, Weapon *weapon);
 		~HumanB();
 		void	attack();
 		void	setWeapon(Weapon &weapon);
 };
-
-#endif

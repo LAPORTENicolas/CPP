@@ -1,23 +1,28 @@
-#pragma once
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/15 22:38:49 by nlaporte          #+#    #+#             */
+/*   Updated: 2026/03/15 23:16:08 by nlaporte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#ifndef _HARL_H__
-# define _HARL_H__
+#pragma once
 
 # include <string>
 
 class Harl
 {
-	void	debug(void);
-	void	info(void);
-	void	warning(void);
-	void	error(void);
-	void	ok(void);
+	static void	debug(void);
+	static void	info(void);
+	static void	warning(void);
+	static void	error(void);
 
 	public:
 		Harl();
 		~Harl();
-		void			(Harl::*complain(std::string))();
-		unsigned long	hash_pls(std::string);
+		static void	complain(const std::string &level);
 };
-
-#endif // _HARL_H__

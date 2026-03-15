@@ -2,7 +2,7 @@ SRCS		:= main.cpp Zombie.cpp zombieHorde.cpp
 OBJS		:= main.o Zombie.o zombieHorde.o
 
 CXX			:= c++
-CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror -g
 NAME		:= ex01
 
 all: ${NAME}
@@ -19,6 +19,6 @@ clean:
 fclean: clean
 	@rm -rf $(NAME)
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean re
 
 re: fclean all
