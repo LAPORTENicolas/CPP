@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 14:28:56 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/13 12:33:22 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/15 14:16:36 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,9 +120,10 @@ int main(void)
 	std::cout << "min " << a << " ou " << b << " = " << Fixed::min((const Fixed&)a, (const Fixed&)b) << std::endl;
 	std::cout << "max " << a << " ou " << b << " = " << Fixed::max(a, (Fixed&)b) << std::endl;
 	std::cout << "max " << a << " ou " << b << " = " << Fixed::max((const Fixed&)a, (const Fixed&)b) << std::endl;
+
+	std::cout << "ll =" << a / 0 << std::endl;
 	return 0;
 }
-
 
 /*
 int main( void )

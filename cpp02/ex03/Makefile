@@ -1,11 +1,9 @@
-SHELL		:= bash
-
 SRCS		:= main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS		:= main.o Fixed.o Point.o bsp.o
 
 CXX			:= c++
 CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror
-NAME		:= fixed
+NAME		:= bsp
 
 all: ${NAME}
 

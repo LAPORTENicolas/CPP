@@ -6,14 +6,15 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 13:34:45 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/14 11:30:31 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/15 14:12:57 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <ostream>
 #ifndef  _FIXED_H__
 # define _FIXED_H__
+
+# include <ostream>
 
 class Fixed
 {
@@ -28,8 +29,8 @@ class Fixed
 		~Fixed();
 		Fixed				&operator=(const Fixed&);
 		friend std::ostream &operator<<(std::ostream&, const Fixed&);
-		int					toInt() const;
-		float				toFloat() const;
+		int					toInt(void) const;
+		float				toFloat(void) const;
 		int					getRawBits(void) const;
 		void				setRawBits(int const);
 };

@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 13:40:50 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/14 11:38:13 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/15 13:43:17 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,15 @@ Fixed::Fixed(float n)
 
 Fixed::Fixed(const Fixed &obj)
 {
-	//std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	*this = obj;
 }
 
 Fixed &Fixed::operator=(const Fixed &obj)
 {
-	//std::cout << "Copy assignment constructor called" << std::endl;
-	this->fixed_val = obj.fixed_val;
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &obj)
+		this->fixed_val = obj.fixed_val;
 	return *this;
 }
 
