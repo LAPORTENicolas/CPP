@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:42:38 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/15 19:44:10 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:02:09 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 #include "Weapon.hpp"
 
 HumanB::HumanB(const std::string &name) : _name( name ), _weapon( NULL )
-{}
-
-HumanB::HumanB(const std::string &name, Weapon *weapon) : _name( name ), _weapon( weapon )
 {}
 
 HumanB::~HumanB()

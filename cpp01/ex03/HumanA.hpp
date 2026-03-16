@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:37:05 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/15 19:11:04 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:06:09 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ class HumanA
 		HumanA(const std::string &name, Weapon &weapon);
 		~HumanA();
 		void	attack();
+		void	setWeapon(Weapon &weapon);
 };

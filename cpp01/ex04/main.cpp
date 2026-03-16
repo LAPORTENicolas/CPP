@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 14:32:14 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/15 21:27:18 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:15:33 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ namespace
 
 int	main(int ac, char **av)
 {
+	if (ac != 4)
+		return (std::cout << "Need 3 args Filename, s1 and s2\n", 0);
+	
 	std::ifstream	in;
 	std::ofstream	out;
 	std::string		buf;
 	std::string		str1 = static_cast<std::string>(av[2]);
 	std::string		str2 = static_cast<std::string>(av[3]);
-
-	if (ac != 4)
-		return (std::cout << "Need 3 args Filename, s1 and s2\n", 0);
 	try
 	{
 		manage_ifstream(av[1], in);

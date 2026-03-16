@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 10:20:21 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/15 23:40:19 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/16 19:57:48 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,14 @@ int	main(void)
 
 	try 
 	{
+		make_a_test(-1, "Zombie -1");
+		make_a_test(0, "Zombie 0");
 		make_a_test(1, "Zombie A");
 		make_a_test(1, "Zombies B");
 		make_a_test(2, "Zombies C");
 		make_a_test(3, "Zombies D");
-		make_a_test(5, "Zombies E");
+		make_a_test(3, "Zombies D");
+		make_a_test(3, "Zombies D");
 	}
 	catch (const std::exception &e)
 	{

@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:40:21 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/15 19:10:49 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:06:26 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,9 @@ HumanA::~HumanA()
 void	HumanA::attack()
 {
 	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << "\n";
+}
+
+void	HumanA::setWeapon(Weapon &weapon)
+{
+	this->_weapon = weapon;
 }

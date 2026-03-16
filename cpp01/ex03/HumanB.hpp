@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 16:39:42 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/15 19:10:17 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:02:00 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class HumanB
 	public:
 		HumanB();
 		HumanB(const std::string &name);
-		HumanB(const std::string &name, Weapon *weapon);
 		~HumanB();
 		void	attack();
 		void	setWeapon(Weapon &weapon);
