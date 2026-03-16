@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 13:40:50 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/16 02:01:58 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:56:19 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,28 @@
 
 Fixed::Fixed() : _fixed_val( 0 )
 {
-	std::cout << "Default constructor called\n";
+	//std::cout << "Default constructor called\n";
 }
 
 Fixed::Fixed(const int num) : _fixed_val( num << 8 ) 
 {
-	std::cout << "Int constructor called\n";
+	//std::cout << "Int constructor called\n";
 }
 
 Fixed::Fixed(float n) : _fixed_val( roundf(n * 256.) )
 {
-	std::cout << "Float constructor called\n";
+	//std::cout << "Float constructor called\n";
 }
 
 Fixed::Fixed(const Fixed &obj)
 {
-	std::cout << "Copy constructor called\n";
+	//std::cout << "Copy constructor called\n";
 	*this = obj;
 }
 
 Fixed &Fixed::operator=(const Fixed &obj)
 {
-	std::cout << "Copy assignment operator called\n";
+	//std::cout << "Copy assignment operator called\n";
 	if (this != &obj)
 		this->_fixed_val = obj._fixed_val;
 	return *this;

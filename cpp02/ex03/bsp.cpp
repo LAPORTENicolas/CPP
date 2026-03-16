@@ -22,18 +22,16 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 		if (r < 0) return false;
 		tmp = (t_vec2){p.x - c_vec.x, p.y - c_vec.y};
 		r = (ca.x * tmp.y - ca.y * tmp.x);
-		if (r < 0) return false;
-		return true;
+		return !(r < 0);
 	}
-	else if (r < 0)
+	if (r < 0)
 	{
 		tmp = (t_vec2){p.x - b_vec.x, p.y - b_vec.y};
 		r = (bc.x * tmp.y - bc.y * tmp.x);
 		if (r > 0) return false;
 		tmp = (t_vec2){p.x - c_vec.x, p.y - c_vec.y};
 		r = (ca.x * tmp.y - ca.y * tmp.x);
-		if (r > 0) return false;
-		return true;
+		return !(r > 0);
 	}
 	return false;
 }
