@@ -6,27 +6,30 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 13:00:53 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/10 08:52:17 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/16 02:03:17 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point() : x( 0 ), y( 0 )
+Point::Point() : _x( 0 ), _y( 0 )
 {}
 
-Point::Point(const float x, const float y) : x( Fixed(x) ), y( Fixed(y) )
+Point::Point(const float x, const float y) : _x( Fixed(x) ), _y( Fixed(y) )
 {}
 
-Point::Point(const Point &p)
+Point::Point(const Point &obj)
 {
-	*this = p;
+	*this = obj;
 }
 
-Point	&Point::operator=(const Point &p)
+Point	&Point::operator=(const Point &obj)
 {
-	if (this != &p)
-		*this = p;
+	if (this != &obj)
+	{
+		(Fixed&)this->_x = obj._x;
+		(Fixed&)this->_y = obj._y;
+	}
 	return *this;
 }
 
@@ -35,5 +38,5 @@ Point::~Point()
 
 t_vec2	Point::get_vec() const
 {
-	return (t_vec2){this->x, this->y};
+	return (t_vec2){this->_x, this->_y};
 }

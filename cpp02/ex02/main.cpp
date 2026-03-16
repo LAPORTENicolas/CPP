@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 14:28:56 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/15 14:16:36 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/16 02:07:49 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(void)
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;
 		std::cout << Fixed::max( a, b ) << std::endl;
-		return 0;
+		//return 0;
 	}
 	Fixed a;
 	Fixed const b( 10 );
