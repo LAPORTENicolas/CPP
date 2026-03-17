@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 13:01:03 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/16 01:58:18 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/17 06:46:25 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ class Point
 		Point();
 		Point(const Point &obj);
 		Point	&operator=(const Point &obj);
+		Point	operator-(const Point &rhs) const;
 		Point(const float x, const float y);
-		t_vec2	get_vec() const;
+		Point(const Fixed x, const Fixed y);
+		static float	cross_vec(const Point x, const Point y);
 		~Point();
 };

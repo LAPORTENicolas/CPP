@@ -148,7 +148,7 @@ Fixed	&Fixed::max(const Fixed &lhs, const Fixed &rhs)
 
 Fixed::~Fixed()
 {
-	//std::cout << "Destructor called\n";
+	std::cout << "Destructor called\n";
 }
 
 int	Fixed::getRawBits() const

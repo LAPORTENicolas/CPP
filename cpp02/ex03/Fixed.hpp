@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 13:34:45 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/16 20:53:44 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/16 20:50:35 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,19 @@ class Fixed
 		~Fixed();
 		Fixed				&operator=(const Fixed &obj);
 		Fixed				operator++(int);
-		float				operator++(void);
+		Fixed				operator++();
 		Fixed				operator--(int);
-		float				operator--(void);
+		Fixed				operator--();
 		bool				operator<(const Fixed &rhs) const;
 		bool				operator<=(const Fixed &rhs) const;
 		bool				operator>(const Fixed &rhs) const;
 		bool				operator>=(const Fixed &rhs) const;
 		bool				operator==(const Fixed &rhs) const;
 		bool				operator!=(const Fixed &rhs) const;
-		float				operator+(const Fixed &rhs) const;
-		float				operator-(const Fixed &rhs) const;
-		float				operator*(const Fixed &rhs) const;
-		float				operator/(const Fixed &rhs) const;
+		Fixed				operator+(const Fixed &rhs) const;
+		Fixed				operator-(const Fixed &rhs) const;
+		Fixed				operator*(const Fixed &rhs) const;
+		Fixed				operator/(const Fixed &rhs) const;
 		static Fixed		&min(Fixed &lhs, Fixed &rhs);
 		static Fixed		&min(const Fixed &lhs, const Fixed &rhs);
 		static Fixed		&max(Fixed &lhs, Fixed&);
@@ -49,11 +49,5 @@ class Fixed
 		void				setRawBits(int const raw);
 		float				toFloat(void) const;
 };
-
-typedef struct s_vec2
-{
-	Fixed	x;
-	Fixed	y;
-}	t_vec2;
 
 std::ostream	&operator<<(std::ostream &ost, const Fixed &obj);
