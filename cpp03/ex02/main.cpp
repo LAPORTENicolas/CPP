@@ -15,7 +15,7 @@
 #include "FragTrap.hpp"
 #include <iostream>
 
-#define ITER 1
+#define ITER 20
 
 int	main(void)
 {

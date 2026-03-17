@@ -19,18 +19,23 @@
 DiamondTrap::DiamondTrap() : ClapTrap("_clap_name"), ScavTrap(), FragTrap()
 {
 	this->_name = "";
-	this->_health = 100;
-	this->_energy = 50;
-	this->_damage = 30;
+	this->_health = FragTrap::_health;
+	this->_energy = ScavTrap::_energy;
+	this->_damage = ScavTrap::_damage;
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap()
 {
 	this->_name = name;
+	/*
 	this->_health = 100;
 	this->_energy = 50;
 	this->_damage = 30;
+	*/
+	this->_health = FragTrap::_health;
+	this->_energy = ScavTrap::_energy;
+	this->_damage = ScavTrap::_damage;
 	std::cout << "DiamondTrap parameter constructor called" << std::endl;
 }
 
@@ -42,9 +47,15 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap::DiamondTrap(const DiamondTrap &obj) : ClapTrap(obj._name + "_clap_name"), ScavTrap(), FragTrap()
 {
 	this->_name = obj._name;
+	this->_health = FragTrap::_health;
+	this->_energy = ScavTrap::_energy;
+	this->_damage = ScavTrap::_damage;
+	/*
+	this->_name = obj._name;
 	this->_health = 100;
 	this->_energy = 50;
 	this->_damage = 30;
+	*/
 }
 
 DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &obj)
@@ -52,7 +63,8 @@ DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &obj)
 	if (this != &obj)
 	{
 		this->_name = obj._name;
-		this->ClapTrap::_name = obj._name + "_clap_name";
+		//this->ClapTrap::_name = obj._name + "_clap_name";
+		this->ClapTrap::_name = obj.ClapTrap::_name;// + "_clap_name";
 		this->_health = obj._health;
 		this->_energy = obj._energy;
 		this->_damage = obj._damage;

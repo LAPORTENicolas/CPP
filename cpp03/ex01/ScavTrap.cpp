@@ -99,8 +99,6 @@ void	ScavTrap::beRepaired(unsigned int amount)
 	this->_health += amount;
 	std::cout << "ScavTrap " << this->_name << " beRepaired, get " << amount << " health, after repair health " << this->_health << "hp" << std::endl;
 }
-*/
-/*
 void	ScavTrap::debug()
 {
 	std::cout << "ClapTrap debug " << this->_name << "\n\t_heatlh: " << this->_health << ", _energy: " << this->_energy << ", _damage: " << this->_damage << std::endl;

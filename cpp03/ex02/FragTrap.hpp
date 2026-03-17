@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef _FRAGTRAP_H__
-# define _FRAGTRAP_H__
 
 #include "ClapTrap.hpp"
 
@@ -26,5 +24,3 @@ class FragTrap : public ClapTrap
 		FragTrap	&operator=(const FragTrap &obj);
 		void		highFivesGuys(void);
 };
-
-#endif // _FRAGTRAP_H__

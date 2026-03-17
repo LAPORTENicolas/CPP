@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #pragma once
-#ifndef _CLAPTRAP_H__
-# define _CLAPTRAP_H__
 
 #include <string>
 
@@ -27,14 +25,10 @@ class ClapTrap
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
-		//ClapTrap(std::string name, int health, int energy, int damage);
 		ClapTrap(const ClapTrap &obj);
-		~ClapTrap();
 		ClapTrap	&operator=(const ClapTrap &obj);
+		~ClapTrap();
 		void		attack(const std::string &target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
-		//void	debug();
 };
-
-#endif // _CLAPTRAP_H__
