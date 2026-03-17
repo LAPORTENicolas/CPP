@@ -21,7 +21,7 @@ class Fixed
 
 	public:
 		Fixed();
-		Fixed(int num);
+		Fixed(const int num);
 		Fixed(float num);
 		Fixed(const Fixed &obj);
 		~Fixed();
