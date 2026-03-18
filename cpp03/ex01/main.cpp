@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 12:35:00 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/14 14:56:15 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/18 11:54:09 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
-#define ITER 1
+#define ITER 3
 
 int	main(void)
 {
+	/*
 	{
 		std::cout << "====== ClapTrap tests" << std::endl;
 		ClapTrap	first("Michel"), second;
@@ -48,11 +49,13 @@ int	main(void)
 		}
 		std::cout << "\n" << std::endl;
 	}
+	*/
 	{
 		std::cout << "\n====== ScavTrap tests" << std::endl;
 		ScavTrap	first("Michel"), second;
 		ScavTrap	third(first);
 
+		//first.debug();
 		//first.debug();
 		//second.debug();
 		//third.debug();

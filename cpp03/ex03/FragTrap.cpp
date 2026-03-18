@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 15:28:23 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/15 14:52:39 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/18 13:39:00 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,28 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-	this->_health = 100;
+	std::cout << "FragTrap default constructor called\n";
 	this->_energy = 100;
 	this->_damage = 30;
-	std::cout << "FragTrap default constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 {
-	this->_health = 100;
+	//this->_hit_points = 100;
 	this->_energy = 100;
 	this->_damage = 30;
-	std::cout << "FragTrap parameter constructor called" << std::endl;
+	std::cout << "FragTrap parameter constructor called\n";
 }
 
 FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
 {
-	std::cout << "FragTrap copy constructor called" << std::endl;
+	std::cout << "FragTrap copy constructor called\n";
+	*this = obj;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap destructor called" << std::endl;
+	std::cout << "FragTrap destructor called\n";
 }
 
 FragTrap	&FragTrap::operator=(const FragTrap &obj)
@@ -45,7 +45,7 @@ FragTrap	&FragTrap::operator=(const FragTrap &obj)
 	if (this != &obj)
 	{
 		this->_name = obj._name;
-		this->_health = obj._health;
+		this->_hit_points = obj._hit_points;
 		this->_energy = obj._energy;
 		this->_damage = obj._damage;
 	}
@@ -54,5 +54,5 @@ FragTrap	&FragTrap::operator=(const FragTrap &obj)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "high-fives positive request" << std::endl;
+	std::cout << "high-fives positive request\n";
 }
