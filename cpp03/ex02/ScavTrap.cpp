@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 13:26:55 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 13:36:05 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/18 13:47:14 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,34 +75,3 @@ void	ScavTrap::guardGate()
 	*/
 	std::cout << "ScavTrap " << this->_name << " is now in Gate keeper\n";
 }
-
-/*
-void	ScavTrap::takeDamage(unsigned int amount)
-{
-	if (this->_hit_points <= 0)
-	{
-		std::cout << "ScavTrap " << this->_name << " can't takeDamage, health = " << this->_hit_points << std::endl;
-		return ;
-	}
-	this->_hit_points -= amount;
-	std::cout << "ScavTrap " << this->_name << " takeDamage, causing " << amount << " damage, after damage health " << this->_hit_points << "hp" << std::endl;
-}
-
-void	ScavTrap::beRepaired(unsigned int amount)
-{
-	if (this->_energy <= 0 || this->_hit_points <= 0)
-	{
-		std::cout << "ScavTrap " << this->_name << " can't beRepaired, health = " << this->_hit_points << ", energy = " << this->_energy << std::endl;
-		return ;
-	}
-	this->_energy--;
-	this->_hit_points += amount;
-	std::cout << "ScavTrap " << this->_name << " beRepaired, get " << amount << " health, after repair health " << this->_hit_points << "hp" << std::endl;
-}
-*/
-/*
-void	ScavTrap::debug()
-{
-	std::cout << "ClapTrap debug " << this->_name << "\n\t_heatlh: " << this->_hit_points << ", _energy: " << this->_energy << ", _damage: " << this->_damage << std::endl;
-}
-*/

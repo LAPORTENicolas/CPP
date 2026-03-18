@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 13:27:02 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 13:36:03 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/18 13:47:07 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,4 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 		void	attack(const std::string &target);
 		void	guardGate();
-		//void	takeDamage(unsigned int amount);
-		//void	beRepaired(unsigned int amount);
 };

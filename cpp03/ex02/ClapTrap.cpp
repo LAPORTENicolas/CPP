@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 12:42:27 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 13:36:18 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/18 13:46:52 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,4 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	this->_energy--;
 	this->_hit_points += amount;
 	std::cout << "ClapTrap " << this->_name << " beRepaired, get " << amount << " health, after repair health " << this->_hit_points << "hp\n";
-}
-
-void	ClapTrap::debug()
-{
-	std::cout << "ClapTrap debug " << this->_name << "\n\t_heatlh: " << this->_hit_points << ", _energy: " << this->_energy << ", _damage: " << this->_damage << "\n";
 }

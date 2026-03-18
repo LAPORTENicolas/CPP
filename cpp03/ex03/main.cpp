@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 12:35:00 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 13:43:17 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/18 13:58:39 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(void)
 		second.whoAmI();
 		third.whoAmI();
 		std::cout << "\n";
+		first.attack("LOL");
 	}
 	return 0;
 }

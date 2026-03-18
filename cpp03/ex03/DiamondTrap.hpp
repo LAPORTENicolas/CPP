@@ -6,12 +6,11 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 16:07:14 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 13:38:58 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/18 13:57:05 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _DIAMONTRAP_H__
-# define _DIAMONTRAP_H__
+#pragma once
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
@@ -29,5 +28,3 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		void		attack(const std::string &target);
 		void		whoAmI();
 };
-
-#endif // _DIAMONTRAP_H__
