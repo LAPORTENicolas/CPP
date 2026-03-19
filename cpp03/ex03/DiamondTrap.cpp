@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 16:07:12 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 13:41:42 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/19 01:26:02 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap::DiamondTrap(const DiamondTrap &obj) : ClapTrap(obj._name + "_clap_name"), ScavTrap(), FragTrap()
 {
 	this->_name = obj._name;
+	this->ClapTrap::_name = obj.ClapTrap::_name;
 	this->_hit_points = 100;
 	this->_energy = 50;
 	this->_damage = 30;
