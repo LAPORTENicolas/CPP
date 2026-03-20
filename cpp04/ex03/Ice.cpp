@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 19:15:31 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/19 22:19:17 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/20 03:15:11 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include <iostream>
 
-Ice::Ice() : AMateria()
+Ice::Ice()
 {
 	//std::cout << "Ice constructor called\n";
 	this->_name = "ice";

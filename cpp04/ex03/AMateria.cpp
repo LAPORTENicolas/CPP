@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 19:07:15 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/19 22:18:41 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/20 03:12:54 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ AMateria::AMateria()
 	//std::cout << "AMateria constuctor\n";
 }
 
-AMateria::AMateria(const std::string &type)
+AMateria::AMateria(const std::string &type) : _name( type )
 {
 	//std::cout << "AMateria parameter constuctor\n";
-	this->_name = type;
 }
 
 AMateria::AMateria(const AMateria &obj)

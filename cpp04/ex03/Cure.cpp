@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 19:15:31 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/19 22:19:54 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/20 03:15:02 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include <iostream>
 
-Cure::Cure() : AMateria()
+Cure::Cure()
 {
 	//std::cout << "Cure constructor called\n";
 	this->_name = "cure";

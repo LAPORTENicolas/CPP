@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 20:12:16 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/19 22:19:03 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/20 03:15:45 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ MateriaSource::MateriaSource()
 MateriaSource::MateriaSource(const MateriaSource &obj)
 {
 	//std::cout << "MateriaSource copy constructor\n";
+	for (int i=0; i<4; i++)
+		this->_inventory[i] = 0;
 	*this = obj;
 }
 

@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 19:49:15 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 19:57:59 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/20 02:54:26 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 #include <iostream>
 
-Cat::Cat() : Animal()
+Cat::Cat()
 {
 	std::cout << "Cat constructor\n";
 	this->_type = "Cat";
 }
 
-Cat::Cat(const Cat &obj) : Animal()
+Cat::Cat(const Cat &obj) : Animal(obj)
 {
 	std::cout << "Cat copy constructor\n";
 	*this = obj;

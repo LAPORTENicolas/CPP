@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 19:32:20 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/19 22:19:35 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/20 03:14:55 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 #include <iostream>
 
-Character::Character() : ICharacter()
+Character::Character()
 {
 	//std::cout << "Character constructor\n";
 	for (int i=0; i<4; i++)
 		this->_inventory[i] = 0;
 }
 
-Character::Character(const std::string &name) : ICharacter()
+Character::Character(const std::string &name)
 {
 	//std::cout << "Character paramter constructor\n";
 	for (int i=0; i<4; i++)
@@ -33,6 +33,8 @@ Character::Character(const std::string &name) : ICharacter()
 Character::Character(const Character &obj) : ICharacter(obj)
 {
 	//std::cout << "Character copy constructor\n";
+	for (int i=0; i<4; i++)
+		this->_inventory[i] = 0;
 	*this = obj;
 }
 

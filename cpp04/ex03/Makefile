@@ -13,7 +13,7 @@ ${NAME}: ${OBJS}
 	${CXX} ${CXXFLAGS} -c $< -o $@ 
 
 clean:
-	@rm -rf $(OBJS)
+	@rm -rf $(OBJS) .clang-tidy .cache compile_commands.json
 
 fclean: clean
 	@rm -rf $(NAME)

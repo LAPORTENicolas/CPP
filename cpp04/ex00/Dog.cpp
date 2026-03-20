@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 19:49:35 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 20:25:03 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/20 02:54:43 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-Dog::Dog() : Animal()
+Dog::Dog()
 {
 	std::cout << "Dog constructor\n";
 	this->_type = "Dat";

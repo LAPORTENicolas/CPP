@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 19:49:35 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 21:17:11 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/20 03:17:03 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,16 @@
 
 #include <iostream>
 
-Dog::Dog() : Animal()
+Dog::Dog() : _brain( new Brain() )
 {
 	std::cout << "Dog constructor\n";
 	this->_type = "Dat";
-	this->_brain = new Brain();
 }
 
-Dog::Dog(const Dog &obj) : Animal(obj)
+Dog::Dog(const Dog &obj) : Animal(obj), _brain(new Brain(*obj._brain))
 {
 	std::cout << "Dog copy constructor\n";
 	this->_type = obj._type;
-	this->_brain = new Brain(*obj._brain);
 }
 
 Dog &Dog::operator=(const Dog &obj)

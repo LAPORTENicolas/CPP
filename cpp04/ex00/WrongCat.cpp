@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 20:02:16 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 20:15:33 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/20 02:55:11 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 #include <iostream>
 
-WrongCat::WrongCat() : WrongAnimal()
+WrongCat::WrongCat()
 {
 	std::cout << "WrongCat constructor\n";
 	this->_type = "WrongCat";
 }
 
-WrongCat::WrongCat(const WrongCat &obj) : WrongAnimal()
+WrongCat::WrongCat(const WrongCat &obj) : WrongAnimal(obj)
 {
 	std::cout << "WrongCat copy constructor\n";
 	*this = obj;

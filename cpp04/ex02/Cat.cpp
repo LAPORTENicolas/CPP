@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 19:49:15 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 21:17:52 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/20 03:11:31 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,16 @@
 
 #include <iostream>
 
-Cat::Cat() : Animal(), _brain( new Brain() )
+Cat::Cat() : _brain( new Brain() )
 {
 	std::cout << "Cat constructor\n";
 	this->_type = "Cat";
 }
 
-Cat::Cat(const Cat &obj) : Animal(obj)
+Cat::Cat(const Cat &obj) : Animal(obj), _brain( new Brain(*obj._brain))
 {
 	std::cout << "Cat copy constructor\n";
 	this->_type = obj._type;
-	this->_brain = new Brain();
 }
 
 Cat &Cat::operator=(const Cat &obj)
