@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 15:28:23 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 13:39:00 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/20 03:22:42 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap()
+FragTrap::FragTrap()
 {
 	std::cout << "FragTrap default constructor called\n";
 	this->_energy = 100;

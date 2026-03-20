@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 13:26:55 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 13:47:14 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/20 03:21:21 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap()
+ScavTrap::ScavTrap()
 {
 	this->_hit_points = ClapTrap::_hit_points;
 	this->_energy = 50;
