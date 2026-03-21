@@ -35,6 +35,18 @@ int	main(void)
 	delete i;
 	delete j;
 
+	std::cout << "========= Create Animal, Dog and Cat\n";
+	const Animal metas = Animal();
+	const Animal js = Dog();
+	const Animal is = Cat();
+	std::cout << "\n========= getType Animal, Dog and Cat\n";
+	std::cout << js.getType() << " " << std::endl;
+	std::cout << is.getType() << " " << std::endl;
+	std::cout << "\n========= makeSound Animal, Dog and Cat\n";
+	is.makeSound(); //will output the cat sound!
+	js.makeSound();
+	metas.makeSound();
+
 	std::cout << "========= Creation WrongAnimal, WrongAnimal Cat and WrongCat\n";
 	const WrongAnimal* wAni = new WrongAnimal();
 	const WrongAnimal* wCat = new WrongCat();

@@ -19,6 +19,18 @@
 
 int	main(void)
 {
+	Animal *arr[10];
+
+	for (int i=0;i<5;i++)
+		arr[i] = new Dog();
+	for (int i=5;i<10;i++)
+		arr[i] = new Cat();
+
+	for (int i=0;i<10;i++)
+	{
+		delete arr[i];
+		std::cout << "\n";
+	}
 	Animal *a = new Cat();
 	Animal *b = new Cat();
 
