@@ -2,7 +2,7 @@ SRCS		:= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.
 OBJS		:= main.o Animal.o Dog.o Cat.o WrongAnimal.o WrongCat.o Brain.o
 CXX			:= c++
 CXXFLAGS	:= -std=c++98 -Wall -Wextra -Werror -g -Wshadow -Wno-shadow
-NAME		:= ex02
+NAME		:= ex01
 
 all: ${NAME}
 

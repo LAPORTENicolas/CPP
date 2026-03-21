@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 19:44:40 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/18 21:29:48 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/21 08:21:54 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ Animal &Animal::operator=(const Animal &obj)
 {
 	std::cout << "Animal copy assignement\n";
 	if (this != &obj)
-	{
 		this->_type = obj._type;
-	}
 	return *this;
 }
 
@@ -43,4 +41,9 @@ Animal::~Animal()
 const std::string	&Animal::getType() const
 {
 	return this->_type;
+}
+
+void	Animal::makeSound() const
+{
+	std::cout << "Animal sound\n";
 }

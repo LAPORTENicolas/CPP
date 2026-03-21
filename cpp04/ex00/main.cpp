@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 19:44:19 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/20 02:55:19 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/21 04:23:41 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(void)
 	std::cout << "========= Create Animal, Dog and Cat\n";
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
+	const Animal* jj = new Dog();
 	const Animal* i = new Cat();
 	std::cout << "\n========= getType Animal, Dog and Cat\n";
 	std::cout << j->getType() << " " << std::endl;
@@ -34,6 +35,7 @@ int	main(void)
 	delete meta;
 	delete i;
 	delete j;
+	delete jj;
 
 	std::cout << "========= Create Animal, Dog and Cat\n";
 	const Animal metas = Animal();
@@ -43,7 +45,7 @@ int	main(void)
 	std::cout << js.getType() << " " << std::endl;
 	std::cout << is.getType() << " " << std::endl;
 	std::cout << "\n========= makeSound Animal, Dog and Cat\n";
-	is.makeSound(); //will output the cat sound!
+	is.makeSound();
 	js.makeSound();
 	metas.makeSound();
 

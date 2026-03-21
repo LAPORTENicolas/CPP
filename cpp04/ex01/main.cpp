@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 19:44:19 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/20 03:03:30 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/21 05:01:08 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 
 int	main(void)
 {
+	Dog *ad = new Dog();
+	Dog *bd = new Dog();
+	*bd = *ad;
+	ad->makeSound();
+	bd->makeSound();
+	delete ad;
+	delete bd;
+
 	Animal *arr[10];
 
 	for (int i=0;i<5;i++)
@@ -31,6 +39,8 @@ int	main(void)
 		delete arr[i];
 		std::cout << "\n";
 	}
+
+	/*
 	Animal *a = new Cat();
 	Animal *b = new Cat();
 
@@ -38,14 +48,14 @@ int	main(void)
 	*a = *b;
 	*a = *b;
 	*a = *b;
+	delete b;
 	*a = *a;
 	delete a;
-	delete b;
-	
 	Cat	*cat = new Cat();
 	Cat	*cat2 = new Cat();
 	Dog *dog = new Dog();
 	Dog *dog2 = new Dog();
+	std::cout << "=============\n";
 	*cat = *cat2;
 	*dog = *dog2;
 
@@ -53,7 +63,7 @@ int	main(void)
 	delete cat2;
 	delete dog;
 	delete dog2;
-
+*/
 	/*
 	NOTE: ex00
 

@@ -6,7 +6,7 @@
 /*   By: nlaporte <nlaporte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 19:32:20 by nlaporte          #+#    #+#             */
-/*   Updated: 2026/03/20 03:14:55 by nlaporte         ###   ########.fr       */
+/*   Updated: 2026/03/21 08:28:00 by nlaporte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,10 @@ Character	&Character::operator=(const Character &obj)
 		this->_name = obj._name;
 		for (int i=0; i<4; i++)
 			if (obj._inventory[i] != 0)
+			{
+				delete this->_inventory[i];
 				this->_inventory[i] = obj._inventory[i]->clone();
+			}
 	}
 	return *this;
 }
@@ -74,6 +77,7 @@ void				Character::equip(AMateria *m)
 			return ;
 		}
 	}
+	delete m;
 	std::cout << "Inventory is full\n";
 }
 
