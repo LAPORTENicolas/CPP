@@ -1,0 +1,27 @@
+BasedOnStyle: Microsoft
+IndentWidth: 4
+TabWidth: 4
+UseTab: Always
+BreakBeforeBraces: Allman
+
+# ✅ inline UNIQUEMENT si 1 instruction
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLoopsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortBlocksOnASingleLine: Never
+
+SpaceBeforeParens: ControlStatements
+
+PointerAlignment: Right
+
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+SpaceAfterCStyleCast: false
+
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+
+IndentCaseLabels: true
+MaxEmptyLinesToKeep: 1
+
+IndentWrappedFunctionNames: true
