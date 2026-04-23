@@ -62,23 +62,20 @@ void	Base::identify(Base &p)
 {
 	try
 	{
-		Base &tmp = dynamic_cast<A&>(p);
+		(void)dynamic_cast<A&>(p);
 		std::cout << "A\n";
-		(void)tmp;
 	}
 	catch (...) {}
 	try
 	{
-		Base &tmp = dynamic_cast<B&>(p);
+		(void)dynamic_cast<B&>(p);
 		std::cout << "B\n";
-		(void)tmp;
 	}
 	catch (...) {}
 	try
 	{
-		Base &tmp = dynamic_cast<C&>(p);
+		(void)dynamic_cast<C&>(p);
 		std::cout << "C\n";
-		(void)tmp;
 	}
 	catch (...) {}
 }

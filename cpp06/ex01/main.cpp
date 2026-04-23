@@ -18,16 +18,18 @@ int	main(void)
 	Data		a, b, *c, *d;
 	uintptr_t	p_a, p_b;
 
+
 	a.val = 10;
 	b.val = 42;
 	p_a = Serializer::serialize(&a);
-	std::cout << reinterpret_cast<Data *>(p_a)->val << std::endl;
+	std::cout << reinterpret_cast<Data *>(p_a)->val << "\n";
 	p_b = Serializer::serialize(&b);
-	std::cout << reinterpret_cast<Data *>(p_b)->val << std::endl;
+	std::cout << reinterpret_cast<Data *>(p_b)->val << "\n";
 
 	c = Serializer::deserialize(p_a);
-	std::cout << c->val << std::endl;
+	std::cout << c->val << "\n";
 	d = Serializer::deserialize(p_b);
-	std::cout << d->val << std::endl;
+	std::cout << d->val << "\n";
+
 	return 0;
 }
