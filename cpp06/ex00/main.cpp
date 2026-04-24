@@ -16,7 +16,8 @@ int	main(int ac, char **av)
 {
 	if (ac > 1)
 	{
-		ScalarConverter<void>::convert(av[1]);
+		std::string arg = av[1];
+		ScalarConverter::convert(arg);
 	}
 	return 0;
 }

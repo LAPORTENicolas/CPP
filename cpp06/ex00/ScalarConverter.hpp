@@ -15,7 +15,6 @@
 #include <exception>
 #include <string>
 
-template <typename T>
 class ScalarConverter
 {
 	ScalarConverter();
@@ -36,5 +35,5 @@ class ScalarConverter
 		{
 			virtual const char *what() const throw();
 		};
-		static T convert(const std::string &str);
+		static void convert(const std::string &str);
 };

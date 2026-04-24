@@ -12,165 +12,122 @@
 
 #include "ScalarConverter.hpp"
 
+#include <cctype>
+#include <cfloat>
+#include <cstdlib>
+#include <inttypes.h>
 #include <cmath>
 #include <exception>
 #include <iomanip>
-#include <sstream>
+#include <ios>
 #include <limits>
+#include <stdlib.h>
+#include <sstream>
+#include <limits.h>
 #include <iostream>
+#include <string>
 
-template <typename T>
-ScalarConverter<T>::ScalarConverter()
+ScalarConverter::ScalarConverter()
 {}
 
-template <typename T>
-ScalarConverter<T>::~ScalarConverter()
+ScalarConverter::~ScalarConverter()
 {}
 
-template <typename T>
-ScalarConverter<T>::ScalarConverter(const ScalarConverter &obj)
-{}
-
-template <typename T>
-ScalarConverter<T> &ScalarConverter<T>::operator=(const ScalarConverter &obj)
+ScalarConverter::ScalarConverter(const ScalarConverter &obj)
 {
+	(void)obj;
+}
+
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &obj)
+{
+	(void)obj;
 	return *this;
 }
 
-template<typename T>
-const char *ScalarConverter<T>::CharBadValue::what() const throw()
+const char *ScalarConverter::CharBadValue::what() const throw()
 {
 	return "char: Non displayable";
 }
 
-template<typename T>
-const char *ScalarConverter<T>::CharImpossibleValue::what() const throw()
+const char *ScalarConverter::CharImpossibleValue::what() const throw()
 {
 	return "char: impossible";
 }
 
-template<typename T>
-const char *ScalarConverter<T>::IntBadValue::what() const throw()
+const char *ScalarConverter::IntBadValue::what() const throw()
 {
 	return "int: impossible";
 }
 
-template<>
-char ScalarConverter<char>::convert(const std::string &str)
+double	get_val(const std::string &str)
 {
-	if (str[0] >= '0' && str[0] <= '9')
-	{
-		std::stringstream ss(str);
-		int c;
-		ss >> c;
-		if (c >= 40 && c <= 126)
-			return static_cast<char>(c);
-		throw ScalarConverter::CharBadValue();
+	double	r = 0.f;
 
-	}
-	else if (str.length() != 1)
-		throw ScalarConverter::CharImpossibleValue();
-	return static_cast<char>(str[0]);
-}
-
-template<>
-int	ScalarConverter<int>::convert(const std::string &str)
-{
-	if (str[0] >= '0' && str[0] <= '9')
-	{
-		std::stringstream ss(str);
-		int i;
-		ss >> i;
-		return i;
-
-	}
-	else if (str.length() != 1)
-		throw ScalarConverter::IntBadValue();
-	return static_cast<char>(str[0]);
-}
-
-template<>
-float	ScalarConverter<float>::convert(const std::string &str)
-{
-	if (str[0] >= '0' && str[0] <= '9')
-	{
-		std::stringstream ss(str);
-		float f;
-		ss >> f;
-		if (std::isnan(f))
-			return std::numeric_limits<float>::quiet_NaN();
-		if (std::isinf(f) && f < 0.f)
-			return -std::numeric_limits<float>::infinity();
-		if (std::isinf(f))
-			return std::numeric_limits<float>::infinity();
-		return f;
-	}
-	if (str == "nan")
-		return std::numeric_limits<float>::quiet_NaN();
-	if (str == "-inf")
-		return -std::numeric_limits<float>::infinity();
-	if (str == "+inf")
-		return std::numeric_limits<float>::infinity();
-	return 0.0f;
-}
-
-template<>
-double ScalarConverter<double>::convert(const std::string &str)
-{
-	if (str[0] >= '0' && str[0] <= '9')
-	{
-		std::stringstream ss(str);
-		double d;
-		ss >> d;
-		if (std::isnan(d))
-			return std::numeric_limits<double>::quiet_NaN();
-		if (std::isinf(d) && d < 0.f)
-			return -std::numeric_limits<double>::infinity();
-		if (std::isinf(d))
-			return std::numeric_limits<double>::infinity();
-		return d;
-	}
-	if (str == "nan")
-		return std::numeric_limits<double>::quiet_NaN();
-	if (str == "-inf")
-		return -std::numeric_limits<double>::infinity();
-	if (str == "+inf")
+	if (str == "inf" || str == "inff" || str == "+inf" || str == "+inff")
 		return std::numeric_limits<double>::infinity();
-	return 0.0f;
+	if (str == "-inf" || str == "-inff")
+		return -std::numeric_limits<double>::infinity();
+	if (str == "nan" || str == "nanf")
+		return std::numeric_limits<double>::quiet_NaN();
+	if (std::isdigit(str[0]) || str[0] == '-')
+	{
+		char	*ptr;
+		r = std::strtod(&str[0], &ptr);
+		if (ptr != &str[str.length()])
+			return std::numeric_limits<double>::quiet_NaN();
+	}
+	else if (str.length() == 1)
+		r = static_cast<int>(str[0]);
+	else
+		return std::numeric_limits<double>::quiet_NaN();
+	return r;
 }
 
-template <>
-void	ScalarConverter<void>::convert(const std::string &str)
+void	ScalarConverter::convert(const std::string &str)
 {
-	try
-	{
-		char	c = ScalarConverter<char>::convert(str);
-		std::cout << "char: '" << c << "'\n";
-	}
-	catch (const ScalarConverter::CharBadValue &err)
+	double	r = get_val(str);
+	
+	std::cout << r  << "\n";
+	if (std::isnan(r))
 	{
 		std::cout << "char: impossible\n";
-	}
-	catch (const std::exception &err)
-	{
-		std::cerr << err.what() << "\n";
-	}
-	try
-	{
-		int		i = ScalarConverter<int>::convert(str);
-		std::cout << "int: " << i << "\n";
-	}
-	catch (const ScalarConverter::IntBadValue &err)
-	{
 		std::cout << "int: impossible\n";
+		std::cout << "float: nanf\n";
+		std::cout << "double: nan\n";
+		return ;
 	}
-	catch (const std::exception &err)
+	if (r > 0 && r < 255 && std::isprint(r))
+		std::cout << "char: " << static_cast<char>(r) << "\n";
+	else
+		std::cout << "char: Non displayable\n";
+
+	if (r == std::numeric_limits<double>::infinity())
 	{
-		std::cerr << err.what() << "\n";
+		std::cout << "char: Non displayable\n";
+		std::cout << "int: +inf\n";
+		std::cout << "float: +inff\n";
+		std::cout << "double: +inf\n";
+		return ;
 	}
+	else if (r == -std::numeric_limits<double>::infinity())
+	{
+		std::cout << "char: Non displayable\n";
+		std::cout << "int: -inf\n";
+		std::cout << "float: -inff\n";
+		std::cout << "double: -inf\n";
+		return ;
+	}
+
 	std::cout << std::setprecision(1) << std::fixed;
-	float	f = ScalarConverter<float>::convert(str);
-	std::cout << "float: " << f << "f" << "\n";
-	double	d = ScalarConverter<double>::convert(str);
-	std::cout << "double: " << d << "\n";
+	if (r > INT_MAX || r < INT_MIN)
+		std::cout << "int: impossible\n";
+	else
+		std::cout << "int: " << static_cast<int>(r) << "\n";
+
+	if (r > FLT_MAX || r < -FLT_MAX)
+		std::cout << "float: impossible\n";
+	else
+		std::cout << "float: " << static_cast<float>(r) << "f\n";
+
+	std::cout << "double: " << r << "\n";
 }
